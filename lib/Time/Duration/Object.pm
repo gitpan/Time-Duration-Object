@@ -10,13 +10,13 @@ Time::Duration::Object - The fantastic new Time::Duration::Object!
 
 =head1 VERSION
 
-version 0.12
+version 0.14
 
- $Id: Object.pm,v 1.3 2004/10/28 11:55:45 rjbs Exp $
+ $Id: Object.pm,v 1.4 2004/10/29 01:33:26 rjbs Exp $
 
 =cut
 
-our $VERSION = '0.12';
+our $VERSION = '0.14';
 
 =head1 SYNOPSIS
 
