@@ -10,13 +10,13 @@ Time::Duration::Object - The fantastic new Time::Duration::Object!
 
 =head1 VERSION
 
-version 0.10
+version 0.12
 
- $Id: Object.pm,v 1.1.1.1 2004/10/27 20:09:26 rjbs Exp $
+ $Id: Object.pm,v 1.3 2004/10/28 11:55:45 rjbs Exp $
 
 =cut
 
-our $VERSION = '0.10';
+our $VERSION = '0.12';
 
 =head1 SYNOPSIS
 
@@ -117,7 +117,6 @@ sub concise {
 
 use overload
 	'""' => sub { ${$_[0]} },
-	'0+' => sub { ${$_[0]} },
 	fallback => 1;
 
 =head1 SEE ALSO

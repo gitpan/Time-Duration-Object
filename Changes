@@ -1,5 +1,9 @@
 Revision history for Time-Duration-Object
 
+0.12    2004-10-28 08:00
+        removed unneeded numification overload
+        improved test coverage
+
 0.10    2004-10-27
         first release
 
