@@ -10,13 +10,13 @@ Time::Duration::Object - Time::Duration, but an object
 
 =head1 VERSION
 
-version 0.16
+version 0.161
 
- $Id: Object.pm,v 1.5 2004/11/01 12:25:54 rjbs Exp $
+ $Id: /my/cs/projects/duration/trunk/lib/Time/Duration/Object.pm 27831 2006-11-11T04:08:37.879959Z rjbs  $
 
 =cut
 
-our $VERSION = '0.16';
+our $VERSION = '0.161';
 
 =head1 SYNOPSIS
 
@@ -81,20 +81,21 @@ These methods all perform the function of the same name from Time::Duration.
 =cut
 
 {
-	no strict 'refs';
-	no warnings 'redefine';
-	my @methods = qw(
-		duration duration_exact ago ago_exact from_now from_now_exact later
-		later_exact earlier earlier_exact
-	);
-	for (@methods) {
-		my $method = \&{"Time::Duration::$_"};
-		*{$_} = sub {
-			unshift @_, ${(shift)};
-			my $result = &$method(@_);
-			bless \$result => 'Time::Duration::_Result';
-		}
-	}
+  ## no critic (ProhibitNoStrict ProhibitNoWarnings)
+  no strict 'refs';
+  no warnings 'redefine';
+  my @methods = qw(
+    duration duration_exact ago ago_exact from_now from_now_exact later
+    later_exact earlier earlier_exact
+  );
+  for (@methods) {
+    my $method = \&{"Time::Duration::$_"};
+    *{$_} = sub {
+      unshift @_, ${(shift)};
+      my $result = &$method(@_);
+      bless \$result => 'Time::Duration::_Result';
+    }
+  }
 }
 
 package Time::Duration::_Result;
