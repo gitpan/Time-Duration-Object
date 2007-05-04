@@ -1,9 +1,9 @@
 --- #YAML:1.0
 name:                Time-Duration-Object
-version:             0.161
+version:             0.200
 abstract:            Time::Duration, but an object
 license:             perl
-generated_by:        ExtUtils::MakeMaker version 6.31
+generated_by:        ExtUtils::MakeMaker version 6.32
 distribution_type:   module
 requires:     
     Test::More:                    0
